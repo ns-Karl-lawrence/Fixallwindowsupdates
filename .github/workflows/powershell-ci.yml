@@ -1,0 +1,28 @@
+name: PowerShell CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PSScriptAnalyzer
+        run: |
+          Install-Module PSScriptAnalyzer -Scope CurrentUser -Force
+        shell: pwsh
+      - name: Run PSScriptAnalyzer
+        run: |
+          Import-Module PSScriptAnalyzer
+          Invoke-ScriptAnalyzer -Path ./Fixallwindowsupdates.ps1 -Recurse -Severity Error,Warning
+        shell: pwsh
+      - name: Run Pester tests (when present)
+        if: ${{ hashFiles('Tests/**/*.Tests.ps1') != '' }}
+        run: |
+          Install-Module Pester -Scope CurrentUser -Force
+          Invoke-Pester -Path ./Tests -CI
+        shell: pwsh
