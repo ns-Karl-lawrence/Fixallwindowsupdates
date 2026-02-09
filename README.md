@@ -1,5 +1,6 @@
 # FixAllWindowsUpdates
 
+
 [![PowerShell CI](https://github.com/KarlLawrence/FixAllWindowsUpdates/actions/workflows/powershell-ci.yml/badge.svg)](https://github.com/KarlLawrence/FixAllWindowsUpdates/actions/workflows/powershell-ci.yml)
 
 A single PowerShell script (`Fixallwindowsupdates.ps1`) that performs end-to-end Windows Update recovery: health checks, optional repair routines, comprehensive logging, and interactive or unattended installation of available updates with retry and verification logic.@Fixallwindowsupdates.ps1#2-114@Fixallwindowsupdates.ps1#121-134
