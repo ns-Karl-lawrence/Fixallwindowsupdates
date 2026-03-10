@@ -24,7 +24,7 @@ A single PowerShell script (`Fixallwindowsupdates.ps1`) that performs end-to-end
 
 ## Getting started
 
-1. Download or clone this repository.
+1. Download or this repository.
 2. Open an elevated PowerShell console (Run as Administrator).
 3. Unblock the script if it was downloaded from the internet:
 
